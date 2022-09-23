@@ -4,20 +4,20 @@ import {
   SNAKE_SPEED,
   getSnakeHead,
   snakeIntersection,
-} from './snake.js';
+} from "./snake.js";
 
-import { update as updateFood, draw as drawFood } from './food.js';
+import { update as updateFood, draw as drawFood } from "./food.js";
 
-import { outsideGrid } from './grid.js';
+import { outsideGrid } from "./grid.js";
 
-const gameBoard = document.getElementById('game-board');
+const gameBoard = document.getElementById("game-board");
 let lastRenderTime = 0;
 let gameOver = false;
 
 function main(currentTime) {
   if (gameOver) {
-    if (confirm('You lost. Press OK to restart')) {
-      window.location = '/';
+    if (confirm("You lost. Press OK to restart")) {
+      window.location.reload();
     }
     return;
   }
@@ -41,7 +41,7 @@ function update() {
 }
 
 function draw() {
-  gameBoard.innerHTML = '';
+  gameBoard.innerHTML = "";
   drawSnake(gameBoard);
   drawFood(gameBoard);
 }
